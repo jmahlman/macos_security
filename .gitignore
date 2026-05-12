@@ -294,3 +294,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+/.claude
+AGENTS.md
+CLAUDE.md
