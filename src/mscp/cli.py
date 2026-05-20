@@ -203,7 +203,14 @@ def parse_cli() -> None:
         global `config` dict for `output_dir` / `rules_dir`; may call
         `sys.exit` on validation failure.
     """
-    parent_parser = Customparser()
+    parent_parser = Customparser(add_help=False)
+    parent_parser.add_argument(
+        "-h",
+        "--help",
+        action="help",
+        default=argparse.SUPPRESS,
+        help="show help for the current command",
+    )
     parent_parser.add_argument(
         "-D",
         "--debug",
@@ -794,7 +801,7 @@ compliance script (e.g. disa_stig, cis.benchmark)
     set_logger(
         debug=getattr(_pre, "debug", False), verbosity=getattr(_pre, "verbose", 0)
     )
-    argcomplete.autocomplete(parser)
+    argcomplete.autocomplete(parser, exclude=['admin'])
     try:
         args = parser.parse_args()
 
