@@ -16,6 +16,8 @@ import platform
 from datetime import datetime
 from pathlib import Path
 
+import argcomplete
+
 # Local python modules
 from .admin_utils import (
     build_all_baselines,
@@ -792,6 +794,7 @@ compliance script (e.g. disa_stig, cis.benchmark)
     set_logger(
         debug=getattr(_pre, "debug", False), verbosity=getattr(_pre, "verbose", 0)
     )
+    argcomplete.autocomplete(parser)
     try:
         args = parser.parse_args()
 

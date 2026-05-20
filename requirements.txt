@@ -2,6 +2,8 @@
 #    uv pip compile pyproject.toml -o requirements.txt --python-version 3.14
 annotated-types==0.7.0
     # via pydantic
+argcomplete==3.6.3
+    # via mscp (pyproject.toml)
 attrs==26.1.0
     # via
     #   jsonschema

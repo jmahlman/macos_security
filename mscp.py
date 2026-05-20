@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# PYTHON_ARGCOMPLETE_OK
 # Direct-run entry point for uninstalled use.
 # If the mscp package is installed, run `mscp` instead.
 if __name__ != "__main__":
